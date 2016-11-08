@@ -38,77 +38,85 @@ public class DiceController {
     	Random random = new Random();
     	
     	String results = "";
-    	if (six.isSelected())
+    	
+    	try
     	{
-    		if (Integer.parseInt(numberOfDice.getText()) <= 10 && Integer.parseInt(numberOfDice.getText()) >= 1)
-    		{
-    			for (int i = 0; i < Integer.parseInt(numberOfDice.getText()); i++)
+    		if (six.isSelected())
+        	{
+        		if (Integer.parseInt(numberOfDice.getText()) <= 10 && Integer.parseInt(numberOfDice.getText()) >= 1)
         		{
-        			int roll = random.nextInt(6) + 1;
-        			
-        			results += roll + "  ";
+        			for (int i = 0; i < Integer.parseInt(numberOfDice.getText()); i++)
+            		{
+            			int roll = random.nextInt(6) + 1;
+            			
+            			results += roll + "  ";
+            		}
         		}
-    		}
-    		
-    		else
-    		{
-    			results = "Invalid";
-    		}
+        		
+        		else
+        		{
+        			results = "Invalid number";
+        		}
+        	}
+        	
+        	if (eight.isSelected())
+        	{
+        		if (Integer.parseInt(numberOfDice.getText()) <= 10 && Integer.parseInt(numberOfDice.getText()) >= 1)
+        		{
+        			for (int i = 0; i < Integer.parseInt(numberOfDice.getText()); i++)
+            		{
+            			int roll = random.nextInt(8) + 1;
+            			
+            			results += roll + "  ";
+            		}
+        		}
+        		
+        		else
+        		{
+        			results = "Invalid number";
+        		}
+        	}
+        	
+        	if (twelve.isSelected())
+        	{
+        		if (Integer.parseInt(numberOfDice.getText()) <= 10 && Integer.parseInt(numberOfDice.getText()) >= 1)
+        		{
+        			for (int i = 0; i < Integer.parseInt(numberOfDice.getText()); i++)
+            		{
+            			int roll = random.nextInt(12) + 1;
+            			
+            			results += roll + "  ";
+            		}
+        		}
+        		
+        		else
+        		{
+        			results = "Invalid number";
+        		}
+        	}
+        	
+        	if (twenty.isSelected())
+        	{
+        		if (Integer.parseInt(numberOfDice.getText()) <= 10 && Integer.parseInt(numberOfDice.getText()) >= 1)
+        		{
+        			for (int i = 0; i < Integer.parseInt(numberOfDice.getText()); i++)
+            		{
+            			int roll = random.nextInt(20) + 1;
+            			
+            			results += roll + "  ";
+            		}
+        		}
+        		
+        		else
+        		{
+        			results = "Invalid number";
+        		}
+        	}
+    	} catch (NumberFormatException e)
+    	{
+    		results = "invalid input";
     	}
     	
-    	if (eight.isSelected())
-    	{
-    		if (Integer.parseInt(numberOfDice.getText()) <= 10 && Integer.parseInt(numberOfDice.getText()) >= 1)
-    		{
-    			for (int i = 0; i < Integer.parseInt(numberOfDice.getText()); i++)
-        		{
-        			int roll = random.nextInt(8) + 1;
-        			
-        			results += roll + "  ";
-        		}
-    		}
-    		
-    		else
-    		{
-    			results = "Invalid";
-    		}
-    	}
-    	
-    	if (twelve.isSelected())
-    	{
-    		if (Integer.parseInt(numberOfDice.getText()) <= 10 && Integer.parseInt(numberOfDice.getText()) >= 1)
-    		{
-    			for (int i = 0; i < Integer.parseInt(numberOfDice.getText()); i++)
-        		{
-        			int roll = random.nextInt(12) + 1;
-        			
-        			results += roll + "  ";
-        		}
-    		}
-    		
-    		else
-    		{
-    			results = "Invalid";
-    		}
-    	}
-    	
-    	if (twenty.isSelected())
-    	{
-    		if (Integer.parseInt(numberOfDice.getText()) <= 10 && Integer.parseInt(numberOfDice.getText()) >= 1)
-    		{
-    			for (int i = 0; i < Integer.parseInt(numberOfDice.getText()); i++)
-        		{
-        			int roll = random.nextInt(20) + 1;
-        			
-        			results += roll + "  ";
-        		}
-    		}
-    		
-    		else
-    		{
-    			results = "Invalid";
-    		}
-    	}
     	
     	result.setText(results);
     }
